@@ -1,0 +1,32 @@
+.box{
+    background-color: rgb(76, 45, 133);
+    border: 2px solid;
+    padding: 20px;
+    margin-top: 60px;
+    margin-left: 300px;
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    color:rgb(173, 246, 144)
+}
+
+.button{
+    margin-left: 50px;
+    color:rgb(69, 142, 83)
+}
+
+.form-group{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+a:link{
+    color:rgb(69, 142, 83);
+}
+
+a:hover{
+    color:rgb(173, 246, 144);
+}

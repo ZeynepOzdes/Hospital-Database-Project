@@ -1,0 +1,17 @@
+{% extends "basepages.html" %}
+{% block title %}Randevu Başarılı{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-3">Randevu Onayı</h2>
+    <div class="alert alert-success" role="alert">
+        <p><strong>Uzmanlık Alanı:</strong> {{ specialization }}</p>
+        {% if doctor %}
+        <p><strong>Doktor:</strong> {{ doctor.isim }} {{ doctor.soy_isim }}</p>
+        {% endif %}
+        <p><strong>Randevu Tarihi:</strong> {{ appointment_date }}</p>
+        <p><strong>Randevu Saati:</strong> {{ appointment_time }}</p>
+        <p>Randevunuz başarıyla oluşturulmuştur.</p>
+    </div>
+    <a href="{{ url_for('auth.home') }}" class="btn btn-primary">Anasayfaya Dön</a>
+</div>
+{% endblock %}

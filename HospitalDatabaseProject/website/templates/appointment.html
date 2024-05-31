@@ -1,0 +1,15 @@
+{% extends "log_in.html" %} {% block title %}Appointment{% endblock %}
+{%block content%}
+<form action = "/appointment" method = "POST">
+    <h3 align = "center">Login</h3>
+    <div class = "form-group">
+            <label for = "patientid">PatientID:</label>
+            <input type = "id" class = "form-control" id = "patientid" name = "patientid" placeholder = "Enter Patient ID Please" required>
+    </div>
+    <br>
+    <button type = "submit" class = "button" value = "submit">Submit</button>
+</form>
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+{% endblock %}

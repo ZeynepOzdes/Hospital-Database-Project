@@ -1,0 +1,36 @@
+{% extends "basepages.html" %} 
+{% block title %}Appointment{% endblock %}
+{% block content %}
+<form action="{{ url_for('auth.appointmentpage', pat_id=pat_id) }}" method="GET">
+    <div class="form-group">
+        <label for="specialization">Uzmanlık Alanı:</label>
+        <select class="form-control" id="specialization" name="specialization" onchange="this.form.submit()">
+            <option value="">Select Specialization</option>
+            {% for spec in specialization_list %}
+            <option value="{{ spec }}" {% if spec == specialization %}selected{% endif %}>{{ spec }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</form>
+
+<form action="{{ url_for('auth.appointmentpage', pat_id=pat_id) }}" method="POST">
+    <input type="hidden" name="specialization" value="{{ specialization }}">
+    <div class="form-group">
+        <label for="doctorid">Doktor:</label>
+        <select class="form-control" id="doctorid" name="doctorid">
+            {% for doctor in doctors %}
+            <option value="{{ doctor[0] }}">{{ doctor[1] }} {{ doctor[2] }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="appointmentdate">Randevu Tarihi:</label>
+        <input type="date" class="form-control" id="appointmentdate" name="appointmentdate" required>
+    </div>
+    <div class="form-group">
+        <label for="appointmenttime">Randevu Saati:</label>
+        <input type="time" class="form-control" id="appointmenttime" name="appointmenttime" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Randevu Al</button>
+</form>
+{% endblock %}

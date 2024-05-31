@@ -1,0 +1,39 @@
+{% extends "basepages.html" %}
+{% block title %}Add Patient{% endblock %}
+{% block content %}
+<h2>Hasta Ekle</h2>
+<form action="{{ url_for('auth.add_patient') }}" method="POST">
+    <div class="form-group">
+        <label for="hasta_id">Hasta ID:</label>
+        <input type="text" class="form-control" id="hasta_id" name="hastaID" required>
+    </div>
+    <div class="form-group">
+        <label for="isim">İsim:</label>
+        <input type="text" class="form-control" id="isim" name="isim" required>
+    </div>
+    <div class="form-group">
+        <label for="soyisim">Soyisim:</label>
+        <input type="text" class="form-control" id="soyisim" name="soy_isim" required>
+    </div>
+    <div class="form-group">
+        <label for="dogum_tarihi">Doğum Tarihi:</label>
+        <input type="date" class="form-control" id="dogum_tarihi" name="dogum_tarihi" required>
+    </div>
+    <div class = "form-group">
+        <label for = "patientgender">PatientGender: </label>
+        <label for = "kadın">Kadın:</label>
+        <input type = "radio" class = "form-control" id = "cinsiyet" value = "Kadın" name = "cinsiyet">
+        <label for = "erkek">Erkek:</label>
+        <input type = "radio" class = "form-control" id = "cinsiyet" value = "Erkek" name = "cinsiyet">
+    </div>
+    <div class="form-group">
+        <label for="numara">Numara:</label>
+        <input type="text" class="form-control" id="numara" name="numara" required>
+    </div>
+    <div class="form-group">
+        <label for="adres">Adres:</label>
+        <input type="text" class="form-control" id="adres" name="adres" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>
+{% endblock %}

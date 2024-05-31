@@ -1,0 +1,17 @@
+{% extends "basepages.html" %}
+{% block title %}Delete Doctor{% endblock %}
+{% block content %}
+<h2>Doktor Sil</h2>
+<form action="{{ url_for('auth.delete_doctor') }}" method="POST">
+    <div class="form-group">
+        <label for="doktor_id">Doktor ID:</label>
+        <input type="text" class="form-control" id="doktor_id" name="doktorID" required>
+    </div>
+    <button type="submit" class="btn btn-danger">Sil</button>
+</form>
+{% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+{% elif success %}
+    <div class="alert alert-success">{{ success }}</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "basepages.html" %}
+{% block title %}Admin Page{% endblock %}
+{% block content %}
+<h2>Admin Panel</h2>
+
+    <a href="{{ url_for('auth.add_patient') }}" class="btn btn-primary"><button>Hasta Ekle</button></a>
+    <br>
+    <br>
+    <a href="{{ url_for('auth.delete_patient') }}" class="btn btn-danger"><button>Hasta Sil</button>
+    <br>
+    <br>
+    <a href="{{ url_for('auth.add_doctor') }}" class="btn btn-primary"><button>Doktor Ekle</button></a>
+    <br>
+    <br>
+    <a href="{{ url_for('auth.delete_doctor') }}" class="btn btn-danger"><button>Doktor Sil</button></a>
+
+{% endblock %}

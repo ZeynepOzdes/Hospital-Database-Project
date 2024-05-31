@@ -1,0 +1,36 @@
+{% extends "basepages.html" %}
+{% block title %}Add Doctor{% endblock %}
+{% block content %}
+<h2>Doktor Ekle</h2>
+<form action="{{ url_for('auth.add_doctor') }}" method="POST">
+    <div class="form-group">
+        <label for="doktor_id">Doktor ID:</label>
+        <input type="text" class="form-control" id="doktor_id" name="doktorID" required>
+    </div>
+    <div class="form-group">
+        <label for="isim">İsim:</label>
+        <input type="text" class="form-control" id="isim" name="isim" required>
+    </div>
+    <div class="form-group">
+        <label for="soyisim">Soyisim:</label>
+        <input type="text" class="form-control" id="soyisim" name="soy_isim" required>
+    </div>
+    <div class="form-group">
+        <label for="uzmanlik_alani">Uzmanlık Alanı:</label>
+        <select class="form-control" id="uzmanlik_alani" name="uzmanlik_alani" required>
+            {% for uzmanlik in uzmanlik_alanlari %}
+            <option value="{{ uzmanlik }}">{{ uzmanlik }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="calistigi_hastane">Çalıştığı Hastane:</label>
+        <select class="form-control" id="calistigi_hastane" name="calistigi_hastane" required>
+            {% for hastane in hastane_isimleri %}
+            <option value="{{ hastane }}">{{ hastane }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>
+{% endblock %}

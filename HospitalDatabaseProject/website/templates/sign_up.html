@@ -1,0 +1,39 @@
+{% extends "signup.html" %} {% block title %}Sign Up{% endblock %}
+{%block content%}
+<form action = "/sign-up" method = "POST">
+    <h3 align = "center">Sign Up</h3>
+    <div class = "form-group">
+            <label for = "patientid">PatientID:</label>
+            <input type = "id" class = "form-control" id = "patientid" name = "patientid" placeholder = "Enter Your ID Please" pattern = "^\d{4}$|^\d{5}$|^\d{6}$"  required>
+    </div>
+    <div class = "form-group">
+            <label for = "patientname">PatientName:</label>
+            <input type = "name" class = "form-control" id = "patientname" name = "patientname" placeholder = "Enter Your Name Please" required>
+    </div>
+    <div class = "form-group">
+            <label for = "patientsurname">PatientSurname:</label>
+            <input type = "surname" class = "form-control" id = "patientsurname" name = "patientsurname" placeholder = "Enter Your Surname Please" required>
+    </div>
+    <div class = "form-group">
+            <label for = "birthdate">PatientBirthDate:</label>
+            <input type = "date" class = "form-control" id = "patientbirthdate" name = "patientbirthdate" placeholder = "Enter Your Birth Date Please" pattern = "[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
+    </div>
+    <div class = "form-group">
+            <label for = "patientgender">PatientGender: </label>
+            <label for = "male">Male:</label>
+            <input type = "radio" class = "form-control" id = "gender" value = "Erkek" name = "gender">
+            <label for = "female">Female:</label>
+            <input type = "radio" class = "form-control" id = "gender" value = "Kadın" name = "gender">
+    </div>
+    <div class = "form-group">
+            <label for = "patientnumber">PatientNumber:</label>
+            <input type = "tel" class = "form-control" id = "patientnumber" name = "patientnumber" placeholder = "05**-***-**-**" pattern = "[0-9]{4}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
+    </div>
+    <div class = "form-group">
+            <label for = "patientaddress">PatientAddress:</label>
+            <input type = "text" class = "form-control" id = "patientaddress" name = "patientaddress" placeholder = "Enter Your Address Please" required>
+    </div>
+    <br>
+    <button type = "submit" class = "button" value = "submit">Submit</button>
+</form>
+{% endblock %}

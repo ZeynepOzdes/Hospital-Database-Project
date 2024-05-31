@@ -1,0 +1,10 @@
+{% extends "basepages.html" %} 
+{% block title %}Doctor Page{% endblock %}
+{% block content %}
+    <span>You entered: {{ doc_id }}</span>
+    <br>
+    <a href="{{ url_for('auth.update_doctor', doctor_id=doc_id) }}"  class="btn btn-primary"><button>Bilgilerimi Güncelle</button></a>
+    <br>
+    <br>
+    <a href="{{ url_for('auth.doctor_pat', doc_id=doc_id) }}" class="btn btn-primary"><button>Hastalarımı Görüntüle</button></a>
+{% endblock %}

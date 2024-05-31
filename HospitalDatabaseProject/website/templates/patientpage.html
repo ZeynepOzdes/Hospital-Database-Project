@@ -1,0 +1,10 @@
+{% extends "basepages.html" %}
+{% block title %}Patient Page{% endblock %}
+{% block content %}
+    <span>You entered: {{ pat_id }}</span>
+    <br>
+    <a href="{{ url_for('auth.update_patient', pat_id=pat_id) }}" class="btn btn-primary"><button>Bilgilerimi Güncelle</button></a>
+    <br>
+    <br>
+    <a href="{{ url_for('auth.pat_appointment', pat_id=pat_id) }}" class="btn btn-primary"><button>Randevularımı Görüntüle</button></a>
+{% endblock %}

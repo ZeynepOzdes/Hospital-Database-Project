@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <title>{% block title %}Home{% endblock %}</title>
+    <a href = "/adminlogin"><span id = "box1" class = box align = "center">Yonetici Girisi</span></a>
+    <br>
+    <a href = "/doctorlogin"><span id = "box2" class = box align = "center">Doktor Girisi</span></a>
+    <br>
+    <a href = "/patientlogin"><span id = "box3" class = box align = "center">Hasta Girisi</span></a>
+    <br>
+    <a href = "/sign-up"><span id = "box4" class = box align = "center">Yeni Hasta Kaydi Olustur</span></a>
+    <br>
+    <a href = "/appointment"><span id = "box5" class = box align = "center">Randevu Al</span></a>
+</body>
+</html>

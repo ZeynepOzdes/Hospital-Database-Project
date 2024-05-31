@@ -1,0 +1,19 @@
+{% extends "log_in.html" %} {% block title %}Admin Login{% endblock %}
+{%block content%}
+<form action = "/adminlogin" method = "POST">
+    <h3 align = "center">Login</h3>
+    <div class = "form-group">
+            <label for = "adminid">AdminID:</label>
+            <input type = "id" class = "form-control" id = "adminid" name = "adminid" placeholder = "Enter Admin ID Please" required>
+    </div>
+    <div class = "form-group">
+        <label for = "adminid">AdminPassword:</label>
+        <input type = "password" class = "form-control" id = "adminpassword" name = "adminpassword" placeholder = "Enter Password Please" required>
+    </div>
+    <br>
+    <button type = "submit" class = "button" value = "submit">Submit</button>
+</form>
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "basepages.html" %} 
+{% block title %}Update Doctor Information{% endblock %}
+{% block content %}
+    <h2>Bilgilerimi Güncelle</h2>
+    <form method="POST" >
+       
+    <div class="form-group">
+        <label for="doctorname">İsim:</label>
+        <input type="text" class="form-control" id="doctorname" name="isim" placeholder="İsminizi Giriniz" required>
+    </div>
+     <div class="form-group">
+        <label for="doctorsurname">Soyisim:</label>
+        <input type="text" class="form-control" id="doctorsurname" name="soy_isim" placeholder="Soyisminizi Giriniz" required>
+    </div>
+    </div>
+    <div class ="form-group">
+        <label for="uzmanlik_alani">Uzmanlık Alanı:</label>
+        <select name="uzmanlik_alani" id="uzmanlik_alani">
+            {% for uzmanlik in uzmanlik_alanlari %}
+            <option value="{{ uzmanlik }}" {% if uzmanlik == doctor.uzmanlik_alani %}selected{% endif %}>{{ uzmanlik }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class ="form-group">
+        <label for="calistigi_hastane">Çalıştığı Hastane:</label>
+        <select name="calistigi_hastane" id="calistigi_hastane">
+            {% for hastane in hastane_isimleri %}
+            <option value="{{ hastane }}" {% if hastane == doctor.calistigi_hastane %}selected{% endif %}>{{ hastane }}</option>
+            {% endfor %}
+        </select>
+    </div>  
+    <br>
+    <button type="submit">Güncelle</button>
+</form>
+{% endblock %}
